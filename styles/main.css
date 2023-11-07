@@ -1,0 +1,108 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #ccc;
+    margin: 0;
+}
+p{
+    color:blueviolet;
+}
+span{
+    color:red;
+}
+#my-span{
+    color: greenyellow;
+}
+span.test{
+    color:inherit;
+}
+
+.highlight{
+    background-color: yellow;
+    color: inherit;
+}
+p span.cursive{
+    color:red;
+}
+
+p .cursive{
+    font-style: italic;
+    color:blue;
+}
+.highlight.cursive{
+    font-weight: bold;
+}
+
+.hidden{
+    display:none !important;
+}
+
+/*
+Specificity:
+*                    -0
+E, ::pseudoelement   -1
+.class, :pseudoclass,[attr] -10
+#id                  -100
+inline styles        -1000
+*/
+
+/*
+(inline styles) |   #id   |  class  |    E   |
+        0           0           1       2
+*/
+
+/*
+[attr]->element has that attr
+[attr=val]->el has that attr and the value is exactly val
+[attr^=val]->a value begins with val
+[attr$=val]->ends with val
+[attr ~=val]->value contains separated by spaces val
+[attr*=val]->value contains inside of it anywhere val
+
+*/
+
+ul li:first-child{
+    color:green;
+}
+li:hover{
+    color:red;
+}
+p::first-letter{
+    font-size: 3em;
+    float:left;
+    line-height: 0.5em;
+}
+
+a[href^='http']::before{
+background-image:no-repeat url(../images/imag.png) ;
+background-size: contain;
+content:'';
+display: inline-block;
+margin-right:  5px;
+width: 9px;
+height: 9px;
+}
+
+[id='my-span']{
+
+}
+
+/*
+selector combinators
+(nothin)->all selectors applied to the same el
+" " (space)->generic descendant selector combinator the selector to the right is inside the selector to the left
+> -> child selector combinator the el to the right is directly inside the selector to the left
++ -> the immediately preceding sibling
+~ -> (preceding sibling)
+*/
+
+ul a {
+    color:red;
+}
+ul ~ p {
+    font-size: 2em;
+}
+p:has(+ul){
+    background:green;
+}
