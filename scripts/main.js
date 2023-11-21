@@ -146,22 +146,22 @@ function add(a =2,b = 2, ...rest){
 //spread operator, imprastie
 console.log(add(...arr));
 
-//doar cu array uri la functii
-const arr2 = [6,7,8];
-const arr3 = [...arr, 8,9, ...arr2];
-console.log(arr3);
+ //doar cu array uri la functii
+ const arr2 = [6,7,8];
+ const arr3 = [...arr, 8,9, ...arr2];
+ console.log(arr3);
 
-//new thingg []
-const clone = [...arr2];
-const copy = arr2;
-console.log(arr2,copy,clone);
-//copy[1] = 'Paul';
+ //new thingg []
+ const clone = [...arr2];
+ const copy = arr2;
+ console.log(arr2,copy,clone);
+ copy[1] = 'Paul';
 
-console.log(arr2, clone,copy);
-// console.log(arr2 === copy, clone === arr2);
+// console.log(arr2, clone,copy);
+ // console.log(arr2 === copy, clone === arr2);
 
-console.clear();
-function alter(obj){
+ console.clear();
+ function alter(obj){
     const clone = [...obj];
     clone[4][0] = 'Paul';
 }
@@ -171,9 +171,9 @@ alter(arr);
 console.log(arr);
 
 
-console.clear();
+ console.clear();
 
-//Function declaration
+ //Function declaration
 function alter(obj){
     const clone = structuredClone (obj);
     clone[4][0] = 'Paul';
@@ -183,31 +183,31 @@ alter(arr);
 //poz4 o eticheta la ceva, se modifica adresa
 console.log(arr);
 
-//primitive imutabile, restul mutabile atentie la const nu pot zice arr = .., dar putem modifica la referinta
+ //primitive imutabile, restul mutabile atentie la const nu pot zice arr = .., dar putem modifica la referinta
 
 //args mereu un array
 const input =[2,3,4,5,6,7,8];
 function multiply(...args){
-    // let prod = 1;
-    // for(const num of args){
-    //     prod = prod * num;
-    // }
-    // return prod;
+    let prod = 1;
+    for(const num of args){
+        prod = prod * num;
+    }
+   // return prod;
 
     return args.reduce((prod, num) => prod*num, 1);
 }
 console.log(multiply(...input));
 
-//Function Expression
-// const add2 = function(a,b){
-//     return a+b;
-// };
+ //Function Expression
+ // const add2 = function(a,b){
+ //     return a+b;
+ // };
 
-//arrow function
-const add2 = (a,b) => a+b;
+ //arrow function
+ const add2 = (a,b) => a+b;
   
 
-console.log(multiply(1,2,4,5,6,7), add(1,2));
+ console.log(multiply(1,2,4,5,6,7), add(1,2));
 
 
 
